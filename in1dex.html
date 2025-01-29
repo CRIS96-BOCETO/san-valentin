@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffcccc;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+        .container {
+            position: relative;
+        }
+        .heart {
+            font-size: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .heart:hover {
+            transform: scale(1.2);
+        }
+        .message {
+            display: none;
+            font-size: 24px;
+            color: #d10000;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .roses, .images {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+        }
+        .images img {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <audio id="music" loop>
+        <source src="romantic_music.mp3" type="audio/mpeg">
+    </audio>
+    <div class="container">
+        <div class="heart" onclick="showLove()">❤️</div>
+        <img src="roses.png" class="roses" alt="rosas">
+        <div class="message">A pesar de la distancia, mi corazón siempre será tuyo 💕</div>
+        <div class="images">
+            <img src="foto1.jpg" alt="Foto 1">
+            <img src="foto2.jpg" alt="Foto 2">
+        </div>
+    </div>
+    <script>
+        function showLove() {
+            document.querySelector('.roses').style.display = 'block';
+            document.querySelector('.message').style.display = 'block';
+            document.querySelector('.images').style.display = 'block';
+            document.getElementById('music').play();
+        }
+    </script>
+</body>
+</html>
